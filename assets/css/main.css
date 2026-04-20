@@ -133,6 +133,12 @@ q:after {
   content: none;
 }
 
+html {
+    box-sizing: border-box;
+    /* Adicione esta linha abaixo */
+    scroll-behavior: smooth;
+}
+
 table {
   border-collapse: collapse;
   border-spacing: 0;
@@ -2490,6 +2496,136 @@ button.alt:hover,
 
 #menu-toggle:checked + .menu-button .bar:nth-child(3) {
   transform: rotate(-45deg) translate(5px, -5px);
+}
+
+/* Floating WhatsApp (Pure CSS)              */
+.floating-whatsapp {
+  position: fixed;
+  bottom: 20px;
+  left: 20px; /* Lado oposto ao menu hambúrguer */
+  z-index: 9999;
+}
+
+#whatsapp-toggle {
+  display: none;
+}
+
+/* O Botão Principal */
+.whatsapp-button {
+  width: 60px;
+  height: 60px;
+  background-color: #25d366; /* Verde oficial do WhatsApp */
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.whatsapp-button i {
+  color: white;
+  font-size: 32px;
+}
+
+.whatsapp-button:hover {
+  background-color: #128c7e;
+  transform: scale(1.05);
+}
+
+/* O Balão de Opções */
+.whatsapp-options {
+  position: absolute;
+  bottom: 75px;
+  left: 0;
+  background-color: rgba(255, 255, 255, 0.842); /* Mesma transparência do seu menu */
+  min-width: 220px;
+  border-radius: 10px; /* Mesmo arredondamento do menu */
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* Mesma sombra do menu */
+  overflow: hidden; /* Impede que os botões vazem a borda arredondada */
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(10px) scale(0.95);
+  transition: all 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  display: flex;
+  flex-direction: column;
+}
+
+.whatsapp-options p {
+  font-family: "Poppins", "Segoe UI", "Roboto", sans-serif;
+  font-size: 13px; /* Fonte menor para não brigar com os botões */
+  font-weight: 600;
+  color: #666;
+  margin: 0;
+  padding: 15px 20px 5px 20px; /* Respiro no topo */
+  text-align: left;
+}
+
+.whatsapp-options a {
+  display: block;
+  padding: 12px 20px; /* Mesmo espaçamento do seu menu */
+  margin: 0;
+  background-color: transparent; /* Remove o fundo cinza, deixa a transparência aparecer */
+  color: #555; /* Mesma cor de texto do seu menu */
+  text-decoration: none;
+  font-size: 15px; /* Tamanho agradável do seu menu */
+  font-weight: 400; /* Fonte mais fina e elegante */
+  font-family: "Poppins", "Segoe UI", "Roboto", sans-serif;
+  border: none;
+  border-bottom: 1px solid #eee; /* Apenas linha divisória, igual ao menu */
+  letter-spacing: 0.5px;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.whatsapp-options a:last-child {
+  border-bottom: none; /* Remove a linha do último item */
+  padding-bottom: 15px; /* Dá um respiro final antes da borda do balão */
+}
+
+.whatsapp-options a:hover {
+  background-color: #f2f2f2; /* Fundo suave no hover, igual ao seu menu */
+  /* color: #25d366; O texto fica verde WhatsApp ao passar o mouse! */
+}
+
+.whatsapp-options i {
+  margin-right: 8px;
+  width: 16px;
+  text-align: center;
+}
+
+/* Lógica de Exibição (Checkbox Hack) */
+#whatsapp-toggle:checked ~ .whatsapp-options {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0) scale(1);
+}
+
+/* Pequeno efeito no botão quando aberto */
+#whatsapp-toggle:checked + .whatsapp-button {
+  background-color: #128c7e;
+  transform: rotate(15deg);
+}
+
+/* Estilização Semântica para Contatos */
+.contact-info {
+    font-style: normal; /* Garante que não fique em itálico */
+    margin-bottom: 2em;
+}
+
+.contact-info p {
+    color: #666;
+    font-weight: 100;
+    font-size: 0.9em; /* Ajuste conforme o visual desejado */
+    line-height: 1.5em;
+    margin-bottom: 0.8em;
+    text-align: center; /* Mantém o padrão do seu layout narrow/mobile */
+}
+
+.contact-info i {
+    margin-right: 10px;
+    width: 20px;
+    text-align: center;
 }
 
 /* Footer */
