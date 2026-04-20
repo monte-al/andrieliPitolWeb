@@ -2607,6 +2607,22 @@ button.alt:hover,
   transform: rotate(15deg);
 }
 
+/* Credenciais Médicas (CRM/RQE)             */
+.med-credentials {
+    width: 100%;
+    text-align: center;
+    margin-top: 2em; /* Dá um bom respiro em relação aos blocos de cima */
+    padding-top: 2em; /* Espaço entre a linha e o texto */
+}
+
+.med-credentials p {
+    font-family: "Poppins", sans-serif;
+    font-size: 0.85em; /* Fonte um pouco menor para não competir com os títulos */
+    letter-spacing: 1.5px; /* Letras mais espaçadas para um tom premium/sofisticado */
+    color: rgba(255, 255, 255, 0.7); /* Branco com transparência para não ficar tão forte */
+    margin: 0;
+}
+
 /* Estilização Semântica para Contatos */
 .contact-info {
     font-style: normal; /* Garante que não fique em itálico */
