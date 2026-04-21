@@ -1666,6 +1666,8 @@ article:last-child {
   display: block;
   width: 100%;
   border-radius: 0.5em;
+  height: auto; /* Força a altura a acompanhar a largura proporcionalmente */
+  object-fit: cover; /* Garante que a foto preencha o espaço sem amassar */
 }
 
 .image.featured {
@@ -2294,11 +2296,11 @@ button.alt:hover,
   position: relative;
   margin: 0;
   background-image: url("images/overlay.png"),
-    url("../../images/fluidoGreen.jpg");
+    url("../../images/fluidoGreen.webp");
   background-size: auto, cover;
   background-position: top left, center center;
   background-repeat: repeat, no-repeat;
-  padding: 14em 0 4em 0;
+  padding: 8em 0 3em 0;
   text-align: center;
   color: #fff;
 }
@@ -2322,7 +2324,7 @@ button.alt:hover,
 }
 
 #header footer {
-  padding-top: 6.5em;
+  padding-top: 3em;
 }
 
 /* Main Sections */
@@ -2652,7 +2654,7 @@ button.alt:hover,
   text-align: center;
   padding: 4em 0 2em 0;
   background-image: url("images/overlay.png"),
-    url("../../images/fluidoGreen.jpg");
+    url("../../images/fluidoGreen.webp");
   background-size: auto, cover;
   background-position: top left, center center;
   background-repeat: repeat, no-repeat;
@@ -2867,7 +2869,7 @@ button.alt:hover,
   /* Header */
 
   #header {
-    padding: 6em 20px 6em 20px;
+    padding: 4em 20px 2em 20px;
   }
 
   #header > header {
